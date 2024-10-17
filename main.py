@@ -28,7 +28,7 @@ class TestDuckDB(unittest.TestCase):
         with duckdb.connect("file.db") as con:
             expected_df = con.sql("SELECT * FROM example_table")
 
-        assert not df.equals(expected_df)
+        self.assertFalse(df.equals(expected_df))
 
 
 if __name__ == "__main__":
